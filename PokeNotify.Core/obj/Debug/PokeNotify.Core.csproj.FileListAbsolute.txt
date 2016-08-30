@@ -1,0 +1,7 @@
+E:\CODE\PokeNotify\PokeNotify.Core\bin\Debug\PokeNotify.Core.dll
+E:\CODE\PokeNotify\PokeNotify.Core\bin\Debug\PokeNotify.Core.pdb
+E:\CODE\PokeNotify\PokeNotify.Core\bin\Debug\Newtonsoft.Json.dll
+E:\CODE\PokeNotify\PokeNotify.Core\bin\Debug\Newtonsoft.Json.xml
+E:\CODE\PokeNotify\PokeNotify.Core\obj\Debug\PokeNotify.Core.csprojResolveAssemblyReference.cache
+E:\CODE\PokeNotify\PokeNotify.Core\obj\Debug\PokeNotify.Core.dll
+E:\CODE\PokeNotify\PokeNotify.Core\obj\Debug\PokeNotify.Core.pdb

@@ -9,3 +9,16 @@ E:\Project\PokeNotify\PokeNotify\obj\Debug\PokeNotify.Properties.Resources.resou
 E:\Project\PokeNotify\PokeNotify\obj\Debug\PokeNotify.csproj.GenerateResource.Cache
 E:\Project\PokeNotify\PokeNotify\obj\Debug\PokeNotify.exe
 E:\Project\PokeNotify\PokeNotify\obj\Debug\PokeNotify.pdb
+E:\CODE\PokeNotify\PokeNotify\bin\Debug\PokeNotify.exe.config
+E:\CODE\PokeNotify\PokeNotify\obj\Debug\PokeNotify.exe
+E:\CODE\PokeNotify\PokeNotify\obj\Debug\PokeNotify.pdb
+E:\CODE\PokeNotify\PokeNotify\bin\Debug\PokeNotify.exe
+E:\CODE\PokeNotify\PokeNotify\bin\Debug\PokeNotify.pdb
+E:\CODE\PokeNotify\PokeNotify\bin\Debug\Newtonsoft.Json.dll
+E:\CODE\PokeNotify\PokeNotify\bin\Debug\PokeNotify.Core.dll
+E:\CODE\PokeNotify\PokeNotify\bin\Debug\PokeNotify.Core.pdb
+E:\CODE\PokeNotify\PokeNotify\bin\Debug\Newtonsoft.Json.xml
+E:\CODE\PokeNotify\PokeNotify\obj\Debug\PokeNotify.csprojResolveAssemblyReference.cache
+E:\CODE\PokeNotify\PokeNotify\obj\Debug\PokeNotify.FrmMain.resources
+E:\CODE\PokeNotify\PokeNotify\obj\Debug\PokeNotify.Properties.Resources.resources
+E:\CODE\PokeNotify\PokeNotify\obj\Debug\PokeNotify.csproj.GenerateResource.Cache
