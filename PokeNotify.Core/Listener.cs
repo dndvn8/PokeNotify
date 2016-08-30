@@ -3,14 +3,19 @@ using System.IO;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
+
 using Newtonsoft.Json;
+using PokeNotify.Core.Models;
 
 namespace PokeNotify.Core
 {
     public class Listener
     {
-        public delegate void PokeNotifyEventHandler(object sender, PokeInfoModel sniperInfo);
-        public event PokeNotifyEventHandler RecieveEventHandler;
+        public delegate void DelegateRecieveLogEventHandler(object sender, string log);
+        public delegate void DelegatePokeNotifyEventHandler(object sender, PokeInfoModel sniperInfo);
+        public event DelegatePokeNotifyEventHandler RecieveEventHandler;
+        public event DelegateRecieveLogEventHandler RecieveLogEventHandler;
+        //private Logger.Logger _logger = PokeNotify.Logger.LogManager.GetLogger(typeof(Listener));
         public Task AsyncTask(string server, int port, CancellationToken cancellationToken = default(CancellationToken))
         {
             return Task.Run(() => Start(server, port, cancellationToken), cancellationToken);
@@ -27,6 +32,8 @@ namespace PokeNotify.Core
                         client.Connect(server, port);
                         using (var sr = new StreamReader(client.GetStream()))
                         {
+                            if (client.Connected)
+                                OnLogging($"Connected to {server} in port {port}");
                             while (client.Connected)
                             {
                                 var line = sr.ReadLine();
@@ -35,17 +42,18 @@ namespace PokeNotify.Core
 
                                 var info = JsonConvert.DeserializeObject<PokeInfoModel>(line);
                                 OnReceive(info);
-                            }   
+                            }
+                            OnLogging($"Disconnected from {server}");   
                         }
                     }
                 }
-                catch (SocketException)
+                catch (SocketException se)
                 {
-                    // this is spammed to often. Maybe add it to debug log later
+                    OnLogging(se.Message);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    // most likely System.IO.IOException
+                    OnLogging(ex.Message);
                 }
                 await Task.Delay(5000, cancellationToken);
             }
@@ -55,6 +63,14 @@ namespace PokeNotify.Core
             Task.Run(() =>
             {
                 RecieveEventHandler?.Invoke(this, pokeInfo);
+            });
+        }
+
+        protected virtual void OnLogging(string log)
+        {
+            Task.Run(() =>
+            {
+                RecieveLogEventHandler?.Invoke(this, log);
             });
         }
     }

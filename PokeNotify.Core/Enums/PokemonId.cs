@@ -1,4 +1,4 @@
-﻿namespace PokeNotify.Core
+﻿namespace PokeNotify.Core.Enums
 {
     public enum PokemonId
     {
